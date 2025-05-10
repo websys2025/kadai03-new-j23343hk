@@ -41,6 +41,16 @@
                     return;
                 }
 
+                const item = items.find(i => i.id == no);
+                console.log(`商品番号: ${item.id}, 商品名: ${item.name}を購入します。`);
+                if(item.stock > 0){
+                    item.stock --;
+                }else if(item.stock == 0){
+                    console.log("在庫がありません")
+                }else{
+                    console.log("エラー")
+                }
+
                 showItemList(); // 商品一覧の表示関数呼び出し
             }
 
